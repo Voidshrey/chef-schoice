@@ -1,3 +1,5 @@
+import mongoose from 'mongoose';
+
 const mealSchema = new mongoose.Schema({
     mealId: { type: String, required: true, unique: true }, // ID from the third-party API
     name: { type: String, required: true },
@@ -7,4 +9,4 @@ const mealSchema = new mongoose.Schema({
     ingredients: [{ type: String }]
   });
   
-  module.exports = mongoose.model('Meal', mealSchema);
+export default mongoose.model('Meal', mealSchema);
