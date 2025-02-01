@@ -3,6 +3,7 @@ import connectDB from './config/db.js';
 import mealRoutes from './routes/mealRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import errorHandler from './middleware/errorHandler.js';
+import cors from 'cors';
 
 
 // Connect to database
@@ -14,7 +15,10 @@ let app = express();
 // for json parsing
 app.use(express.json());
 
-app.use("/api/v1/meals", mealRoutes);
+// Enable CORS for all routes
+app.use(cors());
+
+app.use("/api/v1/meal", mealRoutes);
 app.use("/api/v1/user", userRoutes);
 
 app.use(errorHandler);

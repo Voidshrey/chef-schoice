@@ -1,0 +1,35 @@
+.favorites-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem; /* Adjust for fixed navbar */
+}
+
+.favorites-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.favorite-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  max-width: 800px;
+  margin-bottom: 1rem;
+}
+
+.favorite-image {
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+
+.favorite-info {
+  flex: 1;
+  text-align: left;
+}

@@ -5,8 +5,8 @@ import { getRandomMeal , addFavoriteMeal , getFavoriteMeals} from '../controller
 const router = express.Router();
 
 router.get('/random',getRandomMeal);
-router.post('/meals/favorite', addFavoriteMeal);
-router.get('/meals/favorite/:userId', getFavoriteMeals);
+router.post('/favorite', addFavoriteMeal);
+router.get('/favorite/:userId', getFavoriteMeals);
 
 
 

@@ -1,0 +1,55 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem; /* Adjust for fixed navbar */
+  }
+  
+  .meal-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    max-width: 800px;
+    margin-bottom: 1rem;
+  }
+  
+  .meal-image {
+    width: 300px; /* Reduced width */
+  height: auto;
+  border-radius: 5px;
+  margin-right: 1rem;
+  }
+  
+  .meal-info {
+    text-align: center;
+  }
+  
+  .fav-button,
+  .next-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  .fav-button:hover,
+  .next-button:hover {
+    background-color: #45a049;
+  }
+
+  .favorites-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  

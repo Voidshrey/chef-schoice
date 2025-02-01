@@ -1,0 +1,73 @@
+/* App.css */
+
+.App {
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.signup-button {
+  background-color: white;
+  color: #4CAF50;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 5rem auto 2rem; /* Adjusted margin to account for fixed navbar */
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.register-button,
+.login-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.register-button:hover,
+.login-button:hover {
+  background-color: #45a049;
+}
+
