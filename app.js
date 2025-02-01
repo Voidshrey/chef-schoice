@@ -1,6 +1,8 @@
 import express from 'express';
 import connectDB from './config/db.js';
 import mealRoutes from './routes/mealRoutes.js';
+import userRoutes from './routes/userRoutes.js';
+import errorHandler from './middleware/errorHandler.js';
 
 
 // Connect to database
@@ -13,10 +15,9 @@ let app = express();
 app.use(express.json());
 
 app.use("/api/v1/meals", mealRoutes);
+app.use("/api/v1/user", userRoutes);
 
-app.use((err, req, res, next) => {
-    return res.status(400).json(err.message);
-  });
+app.use(errorHandler);
 
 
 export default app;

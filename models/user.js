@@ -1,9 +1,19 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
-  username: { type: String, required: true, unique: true },
-  favoriteMeals: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Meal' }], 
-  dietaryPreferences: { type: String, enum: ['vegetarian', 'vegan', 'gluten-free', 'none'], default: 'none' } // Optional: For filtering meals
+  username: { type: String, required: true},
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  favoriteMeals: [{ type: String, ref: 'Meal' }], 
+  dietaryPreferences: { type: String, enum: ['vegetarian', 'Vegan', 'Breakfast', 'Chicken','Dessert',
+     'non-vegetarian','Pasta','none' , 'Seafood' , 'Starter'], default: 'none' } // Optional: For filtering meals
 });
 
-module.exports = mongoose.model('User', userSchema);
+export default mongoose.model('User', userSchema);

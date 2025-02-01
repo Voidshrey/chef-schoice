@@ -6,7 +6,7 @@ const mealSchema = new mongoose.Schema({
     category: { type: String },
     instructions: { type: String },
     image: { type: String },
-    ingredients: [{ type: String }]
+    ingredients: [{ ingredient: String }]
   });
   
 export default mongoose.model('Meal', mealSchema);
