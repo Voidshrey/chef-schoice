@@ -12,3 +12,13 @@ export const registerUser = async (userData) => {
   }
 };
 
+export const loginUser = async (loginBody) =>{
+try {
+  const response = await axios.post(`${API_URL}/user/login`, loginBody);
+  return response.data;
+} catch (error) {
+  console.error("Error loggingin User");
+  throw error;
+}
+};
+

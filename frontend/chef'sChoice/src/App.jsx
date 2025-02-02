@@ -7,10 +7,12 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Favorites from './components/Favorites';
 import { UserProvider } from './context/UserContext.jsx';
+import SnackbarProvider from 'react-simple-snackbar'
 
 function App() {
 
   return (
+    <SnackbarProvider>
     <UserProvider>
     <div className="App">
       <Navbar/>
@@ -22,6 +24,7 @@ function App() {
     </Routes>
     </div>
      </UserProvider>
+     </SnackbarProvider>
   );
 }
 

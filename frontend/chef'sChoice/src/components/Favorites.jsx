@@ -2,10 +2,12 @@ import React, { useState, useEffect ,useContext} from 'react';
 import { getFavoriteMeals } from '../service/mealHelper.js';
 import { UserContext } from '../context/UserContext.jsx';
 import '../Favorites.css';
+import { useNavigate } from 'react-router-dom';
 
 function Favorites() {
   const [favorites, setFavorites] = useState([]);
   const { userId } = useContext(UserContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchFavorites = async () => {
@@ -38,6 +40,12 @@ function Favorites() {
       ) : (
         <p>No favorite meals found.</p>
       )}
+      <button
+        onClick={() => navigate("/home")}
+        className="favorites-button"
+      >
+        Go back Home
+      </button>
     </div>
   );
 }

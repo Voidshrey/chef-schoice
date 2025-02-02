@@ -25,7 +25,7 @@ export const getFavoriteMeals = async (userId) => {
 
 export const postFavoriteMeal = async (mealBody) => {
   try {
-    const response = await axios.post(`${API_URL}/meal/favorite/`, mealBody);
+    const response = await axios.post(`${API_URL}/meal/favorite`, mealBody);
     return response.data;
   } catch (error) {
     console.error('Error fetching favorite meals:', error);
