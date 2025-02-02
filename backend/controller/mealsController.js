@@ -47,9 +47,9 @@ const getRandomMeal = async (req, res, next) => {
 
 const addFavoriteMeal = async (req, res, next) => {
     try {
-      const { email, mealId } = req.body;
+      const { id, mealId } = req.body;
   
-      const user = await User.findOne({email});
+      const user = await User.findById(id);
       if (!user) {
         return res.status(404).json({ message: 'User not found' });
       }

@@ -16,4 +16,8 @@ const userSchema = new mongoose.Schema({
      'non-vegetarian','Pasta','none' , 'Seafood' , 'Starter'], default: 'none' } // Optional: For filtering meals
 });
 
+userSchema.methods.verifyPassword = function verifyPassword(password){
+  return password === this.password;
+};
+
 export default mongoose.model('User', userSchema);

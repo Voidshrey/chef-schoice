@@ -23,4 +23,22 @@ const registerUser = async (req, res, next) => {
   }
 };
 
-export { registerUser };
+
+const loginUser = async(req , res, next) =>{
+
+  try{
+    const { email  , password } = req.body;
+    const existingUser = await User.findOne({email});
+    if(!existingUser){
+      throw new Error("User does not exist please register");
+    }
+    if(!existingUser.verifyPassword(password)){
+      throw new Error("Invalid password please verify");
+    }
+    res.status(200).json({message: "User logged in successfully" , user: existingUser});
+  }catch(error){
+next(error);
+  }
+}
+
+export { registerUser , loginUser };
