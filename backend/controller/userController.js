@@ -38,6 +38,7 @@ const loginUser = async(req , res, next) =>{
     if(!existingUser.verifyPassword(password)){
       throw new Error("Invalid password please verify");
     }
+    console.log(existingUser);
     const token = generateToken(existingUser._id);
     res.status(200).json({message: "User logged in successfully" , user: existingUser , token});
   }catch(error){
