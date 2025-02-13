@@ -11,9 +11,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  favoriteMeals: [{ type: String, ref: 'Meal' }], 
-  dietaryPreferences: { type: String, enum: ['vegetarian', 'Vegan', 'Breakfast', 'Chicken','Dessert',
-     'non-vegetarian','Pasta','none' , 'Seafood' , 'Starter'], default: 'none' } // Optional: For filtering meals
+  favoriteMeals: [{ type: String, ref: 'Meal' }]
 });
 
 userSchema.methods.verifyPassword = function verifyPassword(password){

@@ -28,7 +28,17 @@ export const postFavoriteMeal = async (mealBody) => {
     const response = await axios.post(`${API_URL}/meal/favorite`, mealBody);
     return response.data;
   } catch (error) {
-    console.error('Error fetching favorite meals:', error);
+    console.error('Error  adding  favorite meals:', error);
+    throw error;
+  }
+};
+
+export const removeFavoriteMeal = async (mealBody) => {
+  try {
+    const response = await axios.post(`${API_URL}/meal/favorite/delete`, mealBody);
+    return response.data;
+  } catch (error) {
+    console.error('Error deleting favorite meals:', error);
     throw error;
   }
 };

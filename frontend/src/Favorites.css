@@ -18,7 +18,7 @@
   border-radius: 5px;
   padding: 1rem;
   background-color: #f9f9f9;
-  max-width: 800px;
+  max-width: 900px;
   margin-bottom: 1rem;
 }
 
@@ -33,3 +33,9 @@
   flex: 1;
   text-align: left;
 }
+
+.favorit-delete-icon{
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+

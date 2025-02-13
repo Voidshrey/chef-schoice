@@ -1,4 +1,6 @@
 import User from '../models/User.js';
+import jsonwebToken from 'jsonwebtoken';
+import { generateToken } from '../util/generateToken.js';
 
 const registerUser = async (req, res, next) => {
   try {
@@ -16,8 +18,10 @@ const registerUser = async (req, res, next) => {
       dietaryPreferences,
     });
 
+    const token = generateToken(user._id);
+
     await user.save();
-    res.status(201).json({ message: 'User registered successfully', user });
+    res.status(201).json({ message: 'User registered successfully', user , token });
   } catch (error) {
     next(error);
   }
@@ -25,7 +29,6 @@ const registerUser = async (req, res, next) => {
 
 
 const loginUser = async(req , res, next) =>{
-
   try{
     const { email  , password } = req.body;
     const existingUser = await User.findOne({email});
@@ -35,7 +38,8 @@ const loginUser = async(req , res, next) =>{
     if(!existingUser.verifyPassword(password)){
       throw new Error("Invalid password please verify");
     }
-    res.status(200).json({message: "User logged in successfully" , user: existingUser});
+    const token = generateToken(existingUser._id);
+    res.status(200).json({message: "User logged in successfully" , user: existingUser , token});
   }catch(error){
 next(error);
   }

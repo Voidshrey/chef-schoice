@@ -65,6 +65,32 @@ const addFavoriteMeal = async (req, res, next) => {
     }
   };
 
+
+  const removeFavoriteMeal = async (req, res, next) => {
+    try {
+      const { id, mealId } = req.body;
+  
+      const user = await User.findById(id);
+      if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+  
+      if (user.favoriteMeals.includes(mealId)) {
+      let index = user.favoriteMeals.indexOf(mealId);
+      if(index > -1){
+        user.favoriteMeals.splice(index , 1);  // index of eleme and delete 1 from that 
+        await user.save();
+      }
+      }else{
+       return res.status(404).json({ message: 'Meal not found to remove' });
+      }
+  
+      res.status(200).json({ message: 'Meal removed from favorites successfully' });
+    } catch (error) {
+      next(error);
+    }
+  };
+
   const getFavoriteMeals = async (req, res, next) => {
   try {
     const { userId } = req.params;
@@ -124,4 +150,4 @@ const addFavoriteMeal = async (req, res, next) => {
 };
 
 
-export { getRandomMeal , addFavoriteMeal , getFavoriteMeals};
+export { getRandomMeal , addFavoriteMeal , getFavoriteMeals , removeFavoriteMeal};

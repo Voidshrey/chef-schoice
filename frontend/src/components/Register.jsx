@@ -9,8 +9,7 @@ function Register() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [foodPreference, setFoodPreference] = useState("vegetarian");
-  const navigate = useNavigate();
+    const navigate = useNavigate();
   const { setUserId } = useContext(UserContext);
   const [successOpen, successClose] = useSnackbar(successOptions);
   const [errorOpen, errorClose] = useSnackbar(errorOptions);
@@ -71,26 +70,6 @@ function Register() {
             required
             placeholder="Password"
           />
-        </div>
-        <div className="form-group">
-          <label>Food Preferences:</label>
-          <select
-            value={foodPreference}
-            onChange={(e) => setFoodPreference(e.target.value)}
-            required
-            placeholder="Food Preferences"
-          >
-            <option value="vegetarian">Vegetarian</option>
-            <option value="vegan">Vegan</option>
-            <option value="breakfast">Breakfast</option>
-            <option value="chicken">Chicken</option>
-            <option value="dessert">Dessert</option>
-            <option value="non-vegetarian">Non-Vegetarian</option>
-            <option value="pasta">Pasta</option>
-            <option value="none">None</option>
-            <option value="seafood">Seafood</option>
-            <option value="starter">Starter</option>
-          </select>
         </div>
         <button type="submit" className="register-button">
           Register

@@ -6,8 +6,7 @@ const successOptions = {
       color: 'white',
       fontFamily: 'Menlo, monospace',
       fontSize: '20px',
-      textAlign: 'center',
-      zIndex:1
+      textAlign: 'center'
     },
     closeStyle: {
       color: 'white',
@@ -23,8 +22,7 @@ const successOptions = {
       color: 'white',
       fontFamily: 'Menlo, monospace',
       fontSize: '15px',
-      textAlign: 'center',
-      zIndex:1
+      textAlign: 'center'
     },
     closeStyle: {
       color: 'white',
