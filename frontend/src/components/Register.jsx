@@ -4,17 +4,19 @@ import { registerUser } from "../service/userHelper";
 import { UserContext } from "../context/UserContext.jsx";
 import { useSnackbar } from "react-simple-snackbar";
 import { successOptions, errorOptions } from "../utils/common.js";
+import { GiToken } from "react-icons/gi";
 
 function Register() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const { setUserId } = useContext(UserContext);
   const [successOpen, successClose] = useSnackbar(successOptions);
   const [errorOpen, errorClose] = useSnackbar(errorOptions);
 
   const handleSubmit = async (e) => {
+    localStorage.clear();
     let formData = {
       username,
       email,
@@ -26,6 +28,7 @@ function Register() {
       const response = await registerUser(formData);
       if (response.message === "User registered successfully") {
         setUserId(response.user._id);
+        localStorage.setItem("token", response.token);
         successOpen("User registered successfully!", 3000);
         navigate("/home", { state: { userId: response.user._id } });
       } else {

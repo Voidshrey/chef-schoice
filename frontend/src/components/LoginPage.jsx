@@ -14,6 +14,7 @@ function LoginPage() {
   const [errorOpen, errorClose] = useSnackbar(errorOptions);
 
   const handleLogin = async (e) => {
+    localStorage.clear();
     e.preventDefault();
     // Handle login logic here
     const body = {
@@ -25,6 +26,7 @@ function LoginPage() {
       if (response.message === "User logged in successfully") {
         successOpen("User logged in successfully", 3000);
         setUserId(response?.user?._id);
+        localStorage.setItem("token", response.token);
         navigate("/home");
       } else {
         errorOpen("User failed incorrect email or password!!", 3000);
