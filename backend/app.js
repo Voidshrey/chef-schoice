@@ -6,6 +6,7 @@ import errorHandler from './middleware/errorHandler.js';
 import cors from 'cors';
 import { configDotenv } from 'dotenv';
 
+// for using env variables 
 configDotenv();
 
 // Connect to database
