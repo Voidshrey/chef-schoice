@@ -1,6 +1,6 @@
-import axios from "axios";
-import User from "../models/User.js";
-import Meal from "../models/meal.js";
+import User from '../models/User.js';
+import Meal from '../models/Meal.js';
+import axios from 'axios';
 
 // Get a random meal
 const getRandomMeal = async (req, res, next) => {
